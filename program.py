@@ -1,21 +1,23 @@
 f = open("out.txt", "r")
 
 # Read number of cars for each side of road from "out.txt" file
-number_of_vehicles = [
+number_of_vehicles_in_four = [
     int(f.readline()),
     int(f.readline()),
     int(f.readline()),
     int(f.readline())
 ]
+number_of_vehicles = [
+    int(number_of_vehicles_in_four[0]) + int(number_of_vehicles_in_four[1]),
+    int(number_of_vehicles_in_four[2]) + int(number_of_vehicles_in_four[3])
+]
 
 baseTimer = 120  # Timer
-timeLimits = [5, 30]  # Min and Max time for traffic lights
+timeLimits = [5, 60]  # Min and Max time for traffic lights
 
 sides = [
-    "Abylaikhan st. North-South",
-    "Abylaikhan st. South-North",
-    "Tole bi st. East-West",
-    "Tole bi st. West-East"
+    "Abylaikhan st.",
+    "Tole bi st."
 ]
 
 for i in range(len(sides)):
